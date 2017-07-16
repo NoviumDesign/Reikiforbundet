@@ -1,0 +1,80 @@
+header.page-header
+
+  .wrapper
+    padding-top: $small-spacing
+    padding-bottom: $small-spacing
+
+  .logo
+    +breakpoint(max-width $tablet)
+      text-align: center
+    +breakpoint($tablet)
+      +span(6)
+
+    img,
+    a
+      display: block
+
+  .right
+    +breakpoint(max-width $tablet)
+      display: none
+
+    +span(6 last)
+    text-align: right
+
+    .row
+      width: 100%
+      +clearfix
+
+    .login
+      float: right
+      margin-bottom: 8px
+
+    form
+      float: right
+
+    input
+      width: auto
+      float: left
+
+    input[type="submit"]
+      padding-top: $base-spacing * 0.6
+      padding-bottom: $base-spacing * 0.6
+      border-radius: 0
+
+  .main-menu-wrapper
+    +clearfix
+    background-color: $light-gray
+    padding-top: $base-spacing * 0.5
+    padding-bottom: $base-spacing * 0.5
+
+  #nav-wrapper
+    float: left
+
+  nav
+    +clearfix
+
+    > div
+      +breakpoint(max-width $tablet)
+        display: none
+
+    button.menu
+      float: right
+      margin-top: 6px
+      color: #000000
+      position: relative
+
+      span
+        position: absolute
+        left: -52px
+        top: 12px
+
+      img
+        display: inline-block
+
+      +breakpoint($tablet)
+        display: none
+
+  .member-menu
+    float: right
+    +breakpoint(max-width $tablet)
+      display: none

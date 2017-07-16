@@ -1,0 +1,76 @@
+.subpage
+  .main-content
+    padding-top: $base-spacing * 1.5
+
+  header.jumbotron
+    height: 200px
+    font-size: 40px
+    background-position: center center
+    background-repeat: no-repeat
+    background-size: cover
+    position: relative
+    height: 360px
+    background-image: url('/_System/assets/img/hands-wide.jpg')
+    text-align: center
+    color: #FFFFFF
+    font-family: $bold-font-family
+
+    +breakpoint($tablet)
+      height: 360px
+      font-size: 60px
+
+    &.var-ar-reiki
+      background-image: url('/images/vad-ar-reiki-360.jpg')
+
+    &.reikiforbundet
+      background-image: url('/images/om-reikiforbundet-360.jpg')
+
+    &.forskning
+      background-image: url('/images/forskning-om-reiki-360.jpg')
+
+    &.utbildning
+      background-image: url('/images/reikiutbildningar-360.jpg')
+
+    &.kontakt
+      background-image: url('/images/kontakta-reikiforbundet-360.jpg')
+
+
+  aside
+    +breakpoint(max-width $tablet)
+      display: none
+
+    +span(3)
+
+    header
+      background-color: $light-gray
+      padding: $base-spacing * 0.5
+      font-family: $semibold-font-family
+    ul li
+      border-bottom: 1px dashed #C4C4C4
+      padding: $base-spacing * 0.5
+
+      a
+        text-decoration: underline
+
+    .widget
+      +clearfix
+
+  article
+    +breakpoint($tablet)
+      +span(9 last)
+    +breakpoint($desktop)
+      +span(7)
+      +post(2 last)
+
+  section.limit
+    +breakpoint($desktop)
+      +span(7 of 9)
+      +post(2 of 9 last)
+
+
+  h1 + p
+    font-family: $semibold-font-family
+
+.full-width article
+  +breakpoint($tablet)
+    +span(9 last)

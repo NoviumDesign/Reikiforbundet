@@ -1,0 +1,33 @@
+footer
+  +clearfix
+  background-color: $dark-gray
+  margin-top: $base-spacing
+  padding: $base-spacing*1.5 0
+  
+  a
+    color: darken(#fff, 10%)
+
+  nav
+    margin-bottom: $base-spacing
+    +clearfix
+
+    .header > a
+      font-size: $h3-font-size
+      font-family: $heading-font-family
+      cursor: default
+      &:hover
+        color: #fff
+
+    div > ul > li
+      margin-bottom: 1em
+      +breakpoint($tablet)
+        +span(4)
+
+      +breakpoint($desktop)
+        +span(20%)
+        margin-bottom: 0
+
+  .information
+    border-top: 1px solid #fff
+    color: darken(#fff, 20%)
+    padding-top: 1em

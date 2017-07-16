@@ -1,0 +1,38 @@
+<header class="page-header">
+  <div class="container wrapper">
+    <div class="logo">
+      <a href="/">
+        <img src="/_System/assets/img/logo.png" alt="Reikiförbundents logotyp" />
+      </a>
+    </div>
+    <div class="right">
+
+      <div class="row">
+        <div class="login">
+          {% if globals.user.isLoggedIn %}
+            Inloggad som: <a href="/medlemszon"><strong>{{ globals.user.fullname }}</strong></a> (<a href="/LogOutProcess.aspx" class="signout">Logga ut</a>)
+          {% else %}
+             <a href="/logga-in">Logga in i medlemszonen</a>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="row">
+        <form name="catsearchform79855" method="post" action="/Default.aspx?SiteSearchID=-1&ID=/sokresultat">
+          <input type="text" name="CAT_Search" id="CAT_Search" placeholder="Sök på webbsidan...">
+          <input type="submit" value="Sök">
+        </form>
+      </div>
+
+    </div>
+  </div>
+  <div class="main-menu-wrapper">
+    <nav class="container">
+      {module_menu,1846179}
+      <button class="menu" id="openMenu">
+          <span>Meny</span>
+          <img src="/_System/assets/icons/menu.svg" alt="Meny" />
+      </button>
+    </nav>
+  </div>
+</header>

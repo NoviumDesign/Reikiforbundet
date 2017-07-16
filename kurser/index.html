@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kurser</title>
+        <meta name="description" content="" />
+    </head>
+    <body class="subpage">
+        <header class="jumbotron">
+            <div class="vertical-wrap">
+                <div class="vertical-align" ice:editable="line">{module_pagename}</div>
+            </div>
+        </header>
+        <div class="container main-content">
+            {% if globals.user.isLoggedIn %}
+            	<a href="/kurser/create" class="button">Lägg in kurs</a>
+            {% endif %}
+            {module_webapps id="28931" filter="all" render="collection" collection="courses"}
+        </div>
+    </body>
+</html>

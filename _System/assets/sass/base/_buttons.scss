@@ -1,0 +1,77 @@
+#{$all-buttons},
+.button {
+  appearance: none;
+  background-color: $action-color;
+  border: 0;
+  border-radius: 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.8em 1.4em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color $base-duration $base-timing;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &:hover,
+  &:focus {
+    background-color: transparentize($action-color, 0.25);
+    color: #FFFFFF;
+    outline: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:hover {
+      background-color: $action-color;
+    }
+  }
+
+  &.cta {
+    background-color: $action-color;
+    color: #fff;
+
+    &:hover,
+    &:focus {
+      background-color: lighten($action-color, 10%)
+    }
+  }
+
+  &.orange {
+    background-color: $orange;
+    color: #fff;
+
+    &:hover,
+    &:focus {
+      background-color: lighten($orange, 10%)
+    }
+  }
+
+  &.outline {
+    background: none;
+    border-radius: 8px;
+    border: $base-border;
+    border-color: $orange;
+    color: $orange;
+
+    &:hover,
+    &:focus {
+      background-color: lighten($orange, 35%);
+    }
+  }
+}
+
+button.menu {
+  background: none;
+  padding: 0;
+  margin: 0;
+}

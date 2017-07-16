@@ -1,0 +1,61 @@
+.blog,
+.pagination
+  +span(full)
+
+  +breakpoint($tablet)
+    +span(10)
+    +push(1)
+
+  +breakpoint($desktop)
+    +span(7)
+    +push(2.5)
+
+.blog
+
+  h2
+    color: $base-font-color
+    margin-bottom: em(4px)
+
+    a
+      color: $base-font-color
+
+      &:hover,
+      &:focus
+        color: lighten($base-font-color, 40%)
+
+  .post-details
+    font-family: $bold-font-family
+    margin-bottom: $small-spacing
+
+  .post-header
+    border-left: 5px solid $orange
+    padding: $small-spacing 0 $small-spacing $base-spacing
+    margin-bottom: $base-spacing
+
+    .post-details
+      margin: 0
+
+.blog
+  margin-top: $base-spacing*1.5
+  margin-bottom: $base-spacing
+
+.post-list-item
+  margin-bottom: $base-spacing
+
+.pagination
+  border-top: 1px solid $base-font-color
+  padding-top: $small-spacing
+  margin-bottom: $base-spacing
+
+  .previous, .next
+    display: inline-block
+
+  .previous
+    float: left
+
+  .next
+    float: right
+
+.featured-image
+  margin-bottom: $small-spacing
+  width: 100%

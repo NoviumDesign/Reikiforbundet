@@ -1,0 +1,58 @@
+.contact
+  padding-top: $base-spacing*1.5
+  padding-bottom: $base-spacing*1.5
+
+  .information
+    +span(full)
+
+    +breakpoint(max-width $tablet)
+      margin-bottom: $base-spacing
+
+    +breakpoint($tablet)
+      +span(6)
+
+    img
+      margin-bottom: $small-spacing
+
+    .adress, .contact-info
+      @extend .no-list-style
+
+      +span(full)
+      margin-bottom: $small-spacing
+      position: relative
+      padding-left: $base-spacing*2
+
+      &:before
+        position: absolute
+        content: " "
+        background-position: center
+        background-size: cover
+        height: $large-font-size
+        width: $large-font-size
+        top: 0
+        left: 0
+
+      &:last-child
+        margin-bottom: 0
+
+      +breakpoint($desktop)
+        +span(6)
+        margin-bottom: 0
+
+        &:last-child
+          +span(6 last)
+
+    .adress:before
+      background-image: url('/_System/assets/icons/location.svg')
+
+    .contact-info:before
+      background-image: url('/_System/assets/icons/person.svg')
+
+  .form
+    +span(full)
+
+    +breakpoint($tablet)
+      +span(6 last)
+
+    .button
+      float: right

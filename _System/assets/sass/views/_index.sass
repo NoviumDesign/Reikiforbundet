@@ -1,0 +1,41 @@
+.intro
+  a
+    font-family: $bold-font-family
+
+.two-cols
+  +clearfix
+  padding: $base-spacing*1.5 0
+
+  .col-one
+    +breakpoint($tablet)
+      +span(7)
+
+  .col-two
+    +breakpoint($tablet)
+      +span(5 last)
+
+  .japan-sign
+    position: relative
+    text-align: center
+
+    span
+      position: absolute
+      top: 50%
+      left: 50%
+      -webkit-transform: translate(-50%, -50%)
+      -moz-transform: translate(-50%, -50%)
+      -ms-transform: translate(-50%, -50%)
+      -o-transform: translate(-50%, -50%)
+      transform: translate(-50%, -50%)
+      font-size: em(30px)
+      line-height: em(20px)
+      width: 100%
+      font-family: georgia
+      font-style: italic
+      color: #3E3E3E
+
+    img
+      margin-left: auto
+      margin-right: auto
+      display: block
+      max-height: 400px

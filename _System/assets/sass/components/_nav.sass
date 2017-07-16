@@ -1,0 +1,60 @@
+
+$submenu-width: 150px
+
+header nav ul,
+footer nav ul
+  @extend .no-list-style
+
+header nav ul
+  @extend .horizontal-list
+
+  a
+    color: $base-font-color
+    font-size: $large-font-size
+
+    &:hover,
+    &:focus
+      color: shade($base-font-color, 10%)
+
+  li
+    overflow: visible
+    padding-right: 0
+    position: relative
+
+    > a
+      left: 0
+      position: relative
+
+      img
+        display: none
+
+    > ul
+      display: none
+      margin: 0
+      left: 0
+      position: absolute
+      background-color: $light-gray
+      padding: $small-spacing
+      z-index: $z-index-dropdown
+
+    > ul li
+      display: block
+      padding-right: 0
+
+    > ul li a
+      display: inline-block
+      text-align: left
+      width: $submenu-width
+      color: $base-font-color
+
+      &:hover,
+      &:focus
+        color: lighten($base-font-color, 50%)
+
+    > ul > ul
+      left: $submenu-width
+      top: 0
+
+    &:focus > ul,
+    &:hover > ul
+      display: block

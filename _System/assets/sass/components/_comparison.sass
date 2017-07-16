@@ -1,0 +1,30 @@
+.comparison
+  +span(full)
+  +clearfix
+  margin-bottom: 1em
+
+  h2
+    text-align: center
+
+  > div
+    background-color: $light-gray
+    padding: $base-spacing
+    +breakpoint(max-width $tablet)
+      margin-bottom: 1em
+
+
+  .regular
+    +breakpoint($tablet)
+      +span(6)
+
+  .plus
+    +breakpoint($tablet)
+      +span(6 last)
+
+  .action
+    text-align: center      
+
+  .price
+    font-family: $bold-font-family
+    display: block
+    margin-bottom: 0.5em
