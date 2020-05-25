@@ -1,0 +1,36 @@
+<body class="subpage">
+
+  <section class="hero">
+    <div class="container">
+      <div class="information">
+        <h1>{{ title }}</h1>
+        <p>
+          {{ description }}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="blog">
+      {tag_postlist}
+    </div>
+
+    {% if pagination.previousPageUrl != "#" %}
+      <div class="pagination">
+        <span class="previous"><a href="{{ pagination.previousPageUrl }}">Later posts</a></span>
+        {% if pagination.nextPageUrl != "#" %}
+          <span class="next"><a href="{{ pagination.nextPageUrl }}">Earlier posts</a></span>
+        {% endif %}
+      </div>
+    {% elseif pagination.nextPageUrl != "#" %}
+      <div class="pagination">
+        {% if pagination.previousPageUrl != "#" %}
+          <span class="previous"><a href="{{ pagination.previousPageUrl }}">Later posts</a></span>
+        {% endif %}
+        <span class="next"><a href="{{ pagination.nextPageUrl }}">Earlier posts</a></span>
+      </div>
+    {% endif %}
+  </section>
+
+</body>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="/_System/assets/css/application.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <nav class="menu-wrapper">
+          {module_contentholder,name="menu"}
+        </nav>
+
+        <div class="main-wrapper">
+          <div id="wrapperBackground"></div>
+          {module_contentholder,name="header"}
+          {tag_pagecontent}
+          {module_contentholder,name="footer"}
+        </div>
+        <script src="/_System/assets/js/vendor/jquery.form.min.js"></script>
+        <script src="/_System/assets/js/application.js"></script>
+    </body>
+</html>

@@ -1,0 +1,75 @@
+{% if globals.get.HomeState %}
+	{% assign HomeState = globals.get.HomeState %}
+{% else %}
+	{% assign HomeState = '' %}
+{% endif %}
+
+{% if globals.get.reikiGrade %}
+	{% assign reikiGrade = globals.get.reikiGrade %}
+{% else %}
+	{% assign reikiGrade = '' %}
+{% endif %}
+
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>Reikiutövare</title>
+        <meta name="description" content="" />
+    </head>
+    
+    <body class="subpage full-width">
+        <div class="container main-content">
+            <aside>
+                <div class="widget" ice:editable="section">
+                    <form>
+                        <header>Filtrera</header>
+                        <ul>
+                            <li>
+                                <select name="HomeState" id="HomeState" class="cat_dropdown">
+                                    <option value="">-- Välj län --</option>
+                                    <option value="Blekinge" {% if globals.get.HomeState == 'Blekinge' %} selected {% endif %}>Blekinge</option>
+                                    <option value="Dalarna" {% if globals.get.HomeState == 'Dalarna' %} selected {% endif %}>Dalarna</option>
+                                    <option value="Gotland" {% if globals.get.HomeState == 'Gotland' %} selected {% endif %}>Gotland</option>
+                                    <option value="Gävleborg" {% if globals.get.HomeState == 'Gävleborg' %} selected {% endif %}>Gävleborg</option>
+                                    <option value="Halland" {% if globals.get.HomeState == 'Halland' %} selected {% endif %}>Halland</option>
+                                    <option value="Jämtland" {% if globals.get.HomeState == 'Jämtland' %} selected {% endif %}>Jämtland</option>
+                                    <option value="Jönköping" {% if globals.get.HomeState == 'Jönköping' %} selected {% endif %}>Jönköping</option>
+                                    <option value="Kalmar" {% if globals.get.HomeState == 'Kalmar' %} selected {% endif %}>Kalmar</option>
+                                    <option value="Kronoberg" {% if globals.get.HomeState == 'Kronoberg' %} selected {% endif %}>Kronoberg</option>
+                                    <option value="Norrbotten" {% if globals.get.HomeState == 'Norrbotten' %} selected {% endif %}>Norrbotten</option>
+                                    <option value="Skåne" {% if globals.get.HomeState == 'Skåne' %} selected {% endif %}>Skåne</option>
+                                    <option value="Stockholm" {% if globals.get.HomeState == 'Stockholm' %} selected {% endif %}>Stockholm</option>
+                                    <option value="Södermanland" {% if globals.get.HomeState == 'Södermanland' %} selected {% endif %}>Södermanland</option>
+                                    <option value="Uppsala" {% if globals.get.HomeState == 'Uppsala' %} selected {% endif %}>Uppsala</option>
+                                    <option value="Värmland" {% if globals.get.HomeState == 'Värmland' %} selected {% endif %}>Värmland</option>
+                                    <option value="Västerbotten" {% if globals.get.HomeState == 'Västerbotten' %} selected {% endif %}>Västerbotten</option>
+                                    <option value="Västernorrland" {% if globals.get.HomeState == 'Västernorrland' %} selected {% endif %}>Västernorrland</option>
+                                    <option value="Västmanland" {% if globals.get.HomeState == 'Västmanland' %} selected {% endif %}>Västmanland</option>
+                                    <option value="Västra Götaland" {% if globals.get.HomeState == 'Västra Götaland' %} selected {% endif %}>Västra Götaland</option>
+                                    <option value="Örebro" {% if globals.get.HomeState == 'Örebro' %} selected {% endif %}>Örebro</option>
+                                    <option value="Östergötland" {% if globals.get.HomeState == 'Östergötland' %} selected {% endif %}>Östergötland</option>
+                                </select>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="reikiGrade" id="reikiGrade" value="Reikimaster" {% if globals.get.reikiGrade %} checked {% endif %}> Reikilärare
+                            </li>
+                        </ul>
+                        <input type="submit" value="Filtrera">
+                    </form>
+                </div>
+            </aside>
+            <article>
+                <section>
+                    {% if globals.get.HomeState %}
+                    	<h1>Medlemmar i {{ HomeState }}</h1>
+                    {% else %}
+                    	<h1>Medlemsregister</h1>
+                    {% endif %}
+                    {module_data resource="customers" version="v3" fields="id,siteId,customerTypeId,leadSourceTypeId,industryTypeId,ratingTypeId,titleTypeId,externalId,firstName,middleName,lastName,company,dateOfBirth,username,createDate,lastUpdateDate,wholesaler,homePhone,homeFax,workPhone,workFax,mobilePhone,pager,email1,email2,email3,webAddress,anniversary,industryType,leadSourceType,customerType,ratingType,titleType" skip="0" limit="500" order="id" collection="members" template="/_System/templates/list-members.tpl" where="\{'$and':\[\{'addresses.state':\{'$contains':'{{ HomeState }}'\}\},\{'titleType.label':\{'$contains':'{{ reikiGrade }}'\}\}\]\}"}
+                </section>
+            </article>
+        </div>
+    </body>
+    
+</html>

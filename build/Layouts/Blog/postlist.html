@@ -1,0 +1,13 @@
+<div class="post-list-item">
+  <h2 class="post-title">
+    <a href="{{ url }}"> {{ title }} </a>
+  </h2>
+  <div class="post-details"> {{ date | date: "%d, MMMM yyyy" }} </div>
+  {% unless postFeaturedImage == empty %}
+    <img class="featured-image" src="{{ postFeaturedImage }}" alt=" {{ title }}" />
+  {% endunless %}
+  <div class="post-body">
+    {{ body | strip_html | truncate: 250 }}
+    <a href="{{ url }}">Read more</a>
+  </div>
+</div>
